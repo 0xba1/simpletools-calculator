@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ShowBox extends StatefulWidget {
   ShowBox({Key key}) : super(key: key);
-
+  
   @override
   _ShowBoxState createState() => _ShowBoxState();
 }

@@ -1,6 +1,6 @@
-import 'package:calculator/pages/homePage/BasicBox/BasicOperator.dart';
 import 'package:flutter/material.dart';
-import 'package:calculator/pages/homePage/BasicBox/BasicNumber.dart';
+import './BasicBox/BasicOperator.dart';
+import './BasicBox/BasicNumber.dart';
 
 class BasicBox extends StatelessWidget {
   const BasicBox({Key key}) : super(key: key);

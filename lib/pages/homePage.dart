@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'BasicBox.dart';
-import 'FunctionBox.dart';
-import 'ShowBox.dart';
+import '../widgets/BasicBox.dart';
+import '../widgets/FunctionBox.dart';
+import '../widgets/ShowBox.dart';
+import '../widgets/DegRad.dart';
+import 'package:calculator/models/HypVal.dart';
+import 'package:calculator/models/InvVal.dart';
+
+HypVal hypValueNotifier = HypVal();
+InvVal invValueNotifier = InvVal();
 
 class HomePage extends StatefulWidget {
   const HomePage({Key key}) : super(key: key);
@@ -60,17 +66,21 @@ class _HomePageState extends State<HomePage> {
                       onPressed: () => {scaffoldKey.currentState.openDrawer()}),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8),
-                    child: Text(
-                      "DEG",
-                      style: TextStyle(
-                          color: Theme.of(context).primaryColor, fontSize: 16),
-                    ),
+                    child: DegRad(),
                   ),
                 ],
               ),
               Expanded(
                 child: Column(
-                  children: [ShowBox(), FunctionBox(), BasicBox()],
+                  children: [
+                    ShowBox(),
+                    FunctionBox(
+                      degRadValueNotifier: degRadValueNotifier,
+                      invValueNotifier: invValueNotifier,
+                      hypValueNotifier: hypValueNotifier,
+                    ),
+                    BasicBox()
+                  ],
                 ),
               ),
             ],
