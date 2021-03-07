@@ -3,13 +3,9 @@ import '../models/DegRadVal.dart';
 
 DegRadVal degRadValueNotifier = DegRadVal();
 
-class DegRad extends StatefulWidget {
-  DegRad({Key key}) : super(key: key);
-  @override
-  _DegRadState createState() => _DegRadState();
-}
+class DegRad extends StatelessWidget {
+  const DegRad({Key key}) : super(key: key);
 
-class _DegRadState extends State<DegRad> {
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
